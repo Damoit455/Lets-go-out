@@ -75,6 +75,8 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CreateEvent.html" />
+    <Content Include="Pictures\TitleIcon.jpg" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
