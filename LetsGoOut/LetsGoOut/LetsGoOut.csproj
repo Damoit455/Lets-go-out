@@ -66,6 +66,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Javascript\CreateEvent.js" />
     <Content Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -79,6 +80,7 @@
     <Content Include="Javascript\JCertainCheck.js" />
     <Content Include="jquery\jquery-3.1.1.min.js" />
     <Content Include="Pictures\TitleIcon.jpg" />
+    <Content Include="Taffydb\taffy-min.js" />
     <Content Include="Vanillajs\vanilla.js" />
     <Content Include="Web.config" />
   </ItemGroup>
