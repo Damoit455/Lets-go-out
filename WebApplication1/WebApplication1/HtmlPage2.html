@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+    <link rel="icon" href="Pictures/TitleIcon.jpg">
+    <title>Let's go out</title>
+    <meta charset="utf-8" />
+    <script src="https://www.gstatic.com/firebasejs/3.6.9/firebase.js"></script>
+</head>
+<body>
+    <p><label>Event name:</label><input type="text" name="txteventname" id="txtEventname"></p>
+    <p><label>E-mail owner:</label><input type="email" name="txteowner" id="txtEmail"></p>
+    <p><label>Datum:</label><input type="date" name="txtdate" id="txtDate"></p>
+    <p><label>Deadline:</label><input type="datetime-local" name="txtdeadline" id="txtDeadline"></p>
+    <p><label>Place:</label><input type="text" name="txtplace" id="txtPlace"></p>
+    <p><label>Participants:</label><input type="number" name="txtparticipants" id="txtParticipants"></p>
+    <p><label>Comments:</label><input type="text" name="txtcomments" id="txtComments"></p>
+    <p><button type="button" id="btnSubmit">Aanmaken</button></p>
+
+    
+    <script src="javascripts/FirebaseSetup.js">
+  //// Initialize Firebase7
+  //var config = {
+  //  apiKey: "AIzaSyCfzy2pPMvaPzTa6JTS7FTqzauOEMna0NA",
+  //  authDomain: "letsgoout-d5bbf.firebaseapp.com",
+  //  databaseURL: "https://letsgoout-d5bbf.firebaseio.com",
+  //  storageBucket: "letsgoout-d5bbf.appspot.com",
+  //  messagingSenderId: "993637214597"
+  //};
+  //firebase.initializeApp(config);
+  //firebase.database().ref('Events/test').update({ 'test': "rik" });
+
+
+
+
+
+  //      const tEventname = document.getElementById('txtEventname');
+  //      const tOwner = document.getElementById('txtEmail');
+  //      const tDate = document.getElementById('txtDate'); 
+  //      const tDeadline = document.getElementById('txtDeadline');
+  //      const tPlace = document.getElementById('txtPlace');
+  //      const tParticipants = document.getElementById('txtParticipants');
+  //      const tComments = document.getElementById('txtComments');
+  //      const bSubmit = document.getElementById('btnSubmit');
+
+  //      bSubmit.addEventListener('click',e => {
+  //          const Eventname = txtEventname.value;
+  //          const Owner = tOwner.value;
+  //          const Date = tDate.value;
+  //          const Deadline = tDeadline.value;
+  //          const Place = tPlace.value;
+  //          const Participants1 = tParticipants.value;
+  //          const Comments = tComments.value;
+
+  //          firebase.database().ref('Events/' + Eventname).update({ 'Owner': Owner , 'Date': Date ,
+  //                  'Deadline': Deadline ,  'Place': Place ,
+  //                  'Participants1': Participants1, 'Comments': Comments
+  //          });
+  //      })
+    </script>
+</body>
+</html>
+ 

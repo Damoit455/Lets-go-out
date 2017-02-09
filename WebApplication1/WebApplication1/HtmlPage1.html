@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body>
+    <script src="https://www.gstatic.com/firebasejs/3.6.9/firebase.js"></script>
+    <script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCfzy2pPMvaPzTa6JTS7FTqzauOEMna0NA",
+    authDomain: "letsgoout-d5bbf.firebaseapp.com",
+    databaseURL: "https://letsgoout-d5bbf.firebaseio.com",
+    storageBucket: "letsgoout-d5bbf.appspot.com",
+    messagingSenderId: "993637214597"
+  };
+  firebase.initializeApp(config);
+  firebase.database().ref('Events/test').update({ 'test': "rik" });
+
+    </script>
+</body>
+</html>
