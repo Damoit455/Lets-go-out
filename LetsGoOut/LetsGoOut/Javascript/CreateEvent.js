@@ -8,7 +8,7 @@
 firebase.initializeApp(config);
 
 const tEventname = document.getElementById('txtEventname');
-const tOwner = document.getElementById('txtEmail');
+const tEmail = document.getElementById('txtEmail');
 const tDate = document.getElementById('txtDate');
 const tDeadline = document.getElementById('txtDeadline');
 const tPlace = document.getElementById('txtPlace');
@@ -19,7 +19,7 @@ const bSubmit = document.getElementById('btnSubmit');
 bSubmit.addEventListener('click', e => {
         
     const Eventname = txtEventname.value;
-    const Owner = tOwner.value;
+    const Email = tEmail.value;
     const Date = tDate.value;
     const Deadline = tDeadline.value;
     const Place = tPlace.value;
@@ -28,6 +28,7 @@ bSubmit.addEventListener('click', e => {
 
     var Checker = 0;
     var message = "";
+    
 
     if (Eventname != "")
     {
@@ -37,7 +38,7 @@ bSubmit.addEventListener('click', e => {
             message += "Fill in an eventname\n";
         }
 
-    if (Owner != "" && validateEmail(Owner)) {
+    if (Email != "" && validateEmail(Email)) {
             Checker++;
         }
         else {
@@ -83,15 +84,20 @@ bSubmit.addEventListener('click', e => {
 
         if (Checker == 7) {
         firebase.database().ref('Events/' + Eventname).update({
-            'Owner': Owner, 'Date': Date,
+            'Owner e-mail': Email, 'Date': Date,
             'Deadline': Deadline, 'Place': Place,
             'Participants': Participants, 'Comments': Comments
+        });
+        firebase.auth().createUserWithEmailAndPassword(Email, Eventname).catch(function (error) {
+            // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            // ...
         });
     }
     else
     {
             window.alert(message);
-            console.log(message);
     }
 })
 
