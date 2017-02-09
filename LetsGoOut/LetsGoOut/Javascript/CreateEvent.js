@@ -17,6 +17,7 @@ const tComments = document.getElementById('txtComments');
 const bSubmit = document.getElementById('btnSubmit');
 
 bSubmit.addEventListener('click', e => {
+        
     const Eventname = txtEventname.value;
     const Owner = tOwner.value;
     const Date = tDate.value;
@@ -25,9 +26,76 @@ bSubmit.addEventListener('click', e => {
     const Participants = tParticipants.value;
     const Comments = tComments.value;
 
-    firebase.database().ref('Events/' + Eventname).update({
-        'Owner': Owner, 'Date': Date,
-        'Deadline': Deadline, 'Place': Place,
-        'Participants': Participants, 'Comments': Comments
-    });
+    var Checker = 0;
+    var message = "";
+
+    if (Eventname != "")
+    {
+        Checker++;
+        }
+        else {
+            message += "Fill in an eventname\n";
+        }
+
+    if (Owner != "" && validateEmail(Owner)) {
+            Checker++;
+        }
+        else {
+            message += "Fill in an actual email\n";
+        }
+
+        if (Date != "") {
+            Checker++;
+        }
+        else {
+            message += "Fill in a date\n";
+        }
+
+        if (Deadline != "" && Deadline< Date) {
+            Checker++;
+        }
+        else {
+            message += "Fill in a (good) deadline\n";
+        }
+
+        if (Place != "") {
+            Checker++;
+        }
+        else {
+            message += "Fill in a place\n";
+        }
+        7
+        if (Participants != "") {
+            Checker++;
+        }
+        else {
+            message += "Fill in the number of participants\n";
+        }
+
+        if (Comments != "")
+        {
+            Checker++;
+        }
+        else {
+            Checker++;
+            tComments.value = "blank";
+        }
+
+        if (Checker == 7) {
+        firebase.database().ref('Events/' + Eventname).update({
+            'Owner': Owner, 'Date': Date,
+            'Deadline': Deadline, 'Place': Place,
+            'Participants': Participants, 'Comments': Comments
+        });
+    }
+    else
+    {
+            window.alert(message);
+            console.log(message);
+    }
 })
+
+function validateEmail(email) {
+    var re = /\S+@\S+\.\S+/;
+    return re.test(email);
+}
